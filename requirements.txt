@@ -1,0 +1,10 @@
+roboflow
+flask>=2.2.3
+flask-restful>=0.3.9
+gunicorn>=20.1.0
+googletrans==4.0.0rc1
+Pillow>=9.3.0
+python-dotenv>=0.21.0
+numpy>=1.24.0
+opencv-python-headless>=4.6.0
+matplotlib>=3.7.2

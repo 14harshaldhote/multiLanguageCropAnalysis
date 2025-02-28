@@ -280,10 +280,23 @@
                         {% endif %}
                         
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg" id="analyzeBtn">
+                            <button type="submit" class="btn btn-primary btn-lg" id="analyzeBtn" disabled>
                                 <i class="fas fa-microscope me-2"></i> Analyze Leaf
                             </button>
                         </div>
+                    </form>
+                    <script>
+                        const imageInput = document.getElementById('imageInput');
+                        const analyzeBtn = document.getElementById('analyzeBtn');
+
+                        imageInput.addEventListener('change', function() {
+                            if (imageInput.files.length > 0) {
+                                analyzeBtn.disabled = false;
+                            } else {
+                                analyzeBtn.disabled = true;
+                            }
+                        });
+                    </script>
                     </form>
                 </div>
             </div>

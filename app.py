@@ -408,14 +408,11 @@ def upload_file():
     else:
         return render_template('index.html', error='Invalid file format. Please upload a JPG, PNG, or JPEG image')
 
+import os
+port = int(os.getenv("PORT", 10000))
 
 if __name__ == '__main__':
-    # Set the appropriate host and port for your local server
-    host = '0.0.0.0'  # or '127.0.0.1'
-    port = 8989
-    
-    # For development
-    app.run(debug=True, host=host, port=port)
+    app.run(host="0.0.0.0", port=port, debug=True)
     
     # For production with Gunicorn
     # from gunicorn.app.base import BaseApplication
@@ -434,7 +431,7 @@ if __name__ == '__main__':
     #         return self.application
 
     # options = {
-    #     'bind': f'{host}:{port}',
+    #     'bind': f'0.0.0.0:{port}',
     #     'workers': 4,  # Adjust based on your server capacity
     #     'threads': 2,  # Adjust based on your server capacity
     #     'accesslog': '-',  # Print access logs to stdout
